@@ -57,35 +57,7 @@
 
             <form id="contrib-form" onsubmit="return false;">
 
-                <div class="form-group">
-                    <label class="form-label">Submission Category</label>
-                    <div class="segmented-control">
-                        <input type="radio" id="type-song" name="dest-dir" value="Song" checked>
-                        <label for="type-song" class="segment-btn">
-                            <i class="fas fa-music"></i> Single Track
-                        </label>
-                        <input type="radio" id="type-album" name="dest-dir" value="Album">
-                        <label for="type-album" class="segment-btn">
-                            <i class="fas fa-compact-disc"></i> Album Track
-                        </label>
-                    </div>
-                    <span class="field-desc">Choose "Single Track" for individual songs, or "Album Track" for an entire album release.</span>
-                </div>
 
-                <div class="form-group">
-                    <label class="form-label">Audio Source</label>
-                    <div class="segmented-control">
-                        <input type="radio" id="source-upload" name="canvas-source" value="upload" checked>
-                        <label for="source-upload" class="segment-btn">
-                            <i class="fas fa-cloud-upload-alt"></i> Upload New Audio
-                        </label>
-                        <input type="radio" id="source-existing" name="canvas-source" value="existing">
-                        <label for="source-existing" class="segment-btn">
-                            <i class="fas fa-link"></i> Use Existing Audio
-                        </label>
-                    </div>
-                    <span class="field-desc">Upload a new FLAC file, or reuse an audio URL that's already in the library.</span>
-                </div>
 
                 <div id="upload-panel">
                     <div class="form-group">
@@ -191,7 +163,7 @@
             <p id="status-message" style="color: var(--text-dim); margin-bottom: 2rem; line-height: 1.7;">Please hold tight while we configure your fork and create the pull request.</p>
             
             <div id="pr-link-container" style="display: none; margin-bottom: 2rem;">
-                <a id="pr-link" href="#" target="_blank" class="btn-github-pr">
+                <a id="pr-link" href="#" target="_blank" class="btn btn-primary btn-github-pr" style="width: 100%; justify-content: center;">
                     <i class="fab fa-github"></i> View Pull Request on GitHub
                 </a>
             </div>

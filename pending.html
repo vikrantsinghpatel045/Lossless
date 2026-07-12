@@ -75,9 +75,6 @@
     <footer>
         <div id="support-section" class="footer-content">
             <div class="footer-credits">
-                <p style="font-size: 0.85rem; opacity: 0.7;">
-                    Echo Music Lossless is a fork of <a href="https://github.com/vivizzz007/vivimusicanvas" target="_blank" rel="noopener">vivimusicanvas</a> by <a href="https://github.com/vivizzz007" target="_blank" rel="noopener">vivizzz007</a>.
-                </p>
                 <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.6;">Licensed under <a href="LICENSE" target="_blank">GPL-3.0</a>.</p>
             </div>
         </div>
@@ -243,8 +240,15 @@
                 <div class="pending-card-layout">
                     <div class="pending-video-col">
                         ${videoUrl ? `
-                            <div class="pending-video-wrapper" style="display: flex; align-items: center; justify-content: center; background: #222;">
-                                <audio id="${videoId}" src="${videoUrl}" controls style="width: 90%;"></audio>
+                            <div class="pending-video-wrapper" style="display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #111, #222); position: relative; overflow: hidden;">
+                                <div class="audio-waves">
+                                    <div class="wave-bar"></div>
+                                    <div class="wave-bar"></div>
+                                    <div class="wave-bar"></div>
+                                    <div class="wave-bar"></div>
+                                    <div class="wave-bar"></div>
+                                </div>
+                                <audio id="${videoId}" src="${videoUrl}" controls style="width: 90%; position: relative; z-index: 2;"></audio>
                             </div>
                         ` : `
                             <div class="pending-video-wrapper pending-no-video">

@@ -1416,23 +1416,8 @@ footer a:hover {
 }
 
 .btn-github-pr {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.65rem;
-    width: 100%;
-    padding: 1rem 2rem;
     background: #24292f;
-    color: #ffffff;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 0.95rem;
-    letter-spacing: 0.3px;
-    border: 1px solid #24292f;
-    border-radius: 12px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
+    border-color: #24292f;
 }
 
 .btn-github-pr i {
@@ -1442,14 +1427,8 @@ footer a:hover {
 .btn-github-pr:hover {
     background: #1b1f23;
     border-color: #1b1f23;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
 }
 
-.btn-github-pr:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-}
 
 .contribute-container .btn {
     font-family: 'Space Grotesk', sans-serif;
@@ -2415,4 +2394,37 @@ footer a:hover {
     .schema-table td {
         padding: 0.5rem 0.6rem;
     }
+}
+
+.audio-waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    opacity: 0.15;
+    z-index: 1;
+}
+
+.wave-bar {
+    width: 12px;
+    height: 20%;
+    background: var(--accent);
+    border-radius: 6px;
+    animation: equalize 1.2s infinite ease-in-out alternate;
+}
+
+.wave-bar:nth-child(1) { animation-delay: 0.1s; }
+.wave-bar:nth-child(2) { animation-delay: 0.4s; height: 50%; }
+.wave-bar:nth-child(3) { animation-delay: 0.2s; height: 80%; }
+.wave-bar:nth-child(4) { animation-delay: 0.5s; height: 40%; }
+.wave-bar:nth-child(5) { animation-delay: 0.3s; height: 60%; }
+
+@keyframes equalize {
+    0% { height: 10%; background: var(--accent-secondary); }
+    100% { height: 60%; background: var(--accent); }
 }
