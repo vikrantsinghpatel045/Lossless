@@ -8,8 +8,8 @@ const prLink = process.env.PR_LINK || '';
 const prNumber = process.env.PR_NUMBER || '';
 
 if (!webhookUrl) {
-  console.log('DISCORD_WEBHOOK environment variable is not set. Skipping notification.');
-  process.exit(0);
+  console.error('ERROR: DISCORD_WEBHOOK environment variable is not set in GitHub Secrets! Please add it to Settings -> Secrets and variables -> Actions.');
+  process.exit(1);
 }
 
 function getAddedSongs() {
@@ -28,8 +28,9 @@ function getAddedSongs() {
       return !beforeSongs.has(key);
     });
   } catch (err) {
-    console.error('Error parsing music.json or git diff:', err);
-    return [];
+    console.error('ERROR parsing music.json or git diff:', err.message);
+    console.error('Make sure actions/checkout has fetch-depth: 2');
+    process.exit(1);
   }
 }
 
